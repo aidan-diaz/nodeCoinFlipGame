@@ -2,7 +2,7 @@
 
 ![Thumbnail](css/assets/thumbnail.png)
 
-Link to project: ()
+Link to project: (https://nodecoinflipgame.onrender.com/)
 
 
 ## How It's Made:
