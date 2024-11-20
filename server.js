@@ -31,7 +31,7 @@ const server = http.createServer(function(req, res) {
     }
   }
   else if (page == '/css/style.css'){
-    res.writeHead(200, {'Content-Type': 'style.css'});
+    res.writeHead(200, {'Content-Type': 'text/css'});
     fs.readFile('css/style.css', function(err, data) {
       res.write(data);
       res.end();
@@ -42,7 +42,40 @@ const server = http.createServer(function(req, res) {
       res.write(data);
       res.end();
     });
-  }else{
+  }else if (page == '/css/assets/coinHeads.jpg') {
+    res.writeHead(200, {'Content-Type': 'image/jpg'});
+    fs.readFile('css/assets/coinHeads.jpg', function(err, data) {
+        if (err) {
+            res.writeHead(404);
+            res.end("File not found");
+        } else {
+            res.write(data);
+            res.end();
+        }
+    });
+} else if (page == '/css/assets/coinTails.jpg') {
+    res.writeHead(200, {'Content-Type': 'image/jpg'});
+    fs.readFile('css/assets/coinTails.jpg', function(err, data) {
+        if (err) {
+            res.writeHead(404);
+            res.end("File not found");
+        } else {
+            res.write(data);
+            res.end();
+        }
+    });
+}else if (page == '/css/assets/coinTails.jpg') {
+    res.writeHead(200, {'Content-Type': 'image/jpg'});
+    fs.readFile('css/assets/coinTails.jpg', function(err, data) {
+        if (err) {
+            res.writeHead(404);
+            res.end("File not found");
+        } else {
+            res.write(data);
+            res.end();
+        }
+    });
+}else{
     figlet('404!!', function(err, data) {
       if (err) {
           console.log('Something went wrong...');

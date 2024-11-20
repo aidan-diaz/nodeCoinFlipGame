@@ -16,8 +16,10 @@ function playAgainstServer(){
 
       if(playerChoice === 'heads' || playerChoice === 'tails') {
         if(playerChoice === data.decision) {
+          displayCoin(data)
           displayWin(data, playerChoice)
         }else {
+          displayCoin(data)
           displayLoss(data, playerChoice)
         }
 
@@ -45,4 +47,16 @@ function displayError() {
   displayPlayerChoice.innerText = ''
   displayServerChoice.innerText = ''
   displayResult.innerText = 'Please enter heads or tails.'
+}
+
+function displayCoin(data) {
+  const imgContainer = document.querySelector('.resultImage')
+  if(data.decision === 'heads') {
+    imgContainer.innerHTML = '<img src="css/assets/coinHeads.jpg">'
+  }
+  else if (data.decision === 'tails'){
+    imgContainer.innerHTML = '<img src="css/assets/coinTails.jpg">'
+  }else {
+    imgContainer.innerHTML = ''
+  }
 }
